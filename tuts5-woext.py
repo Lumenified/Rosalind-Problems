@@ -22,7 +22,7 @@ with open("rosalind_gc.txt", "r") as p:
 
 def calc_gc_content(seq):
     """
-
+        its calculating the G/C content and returns the id and its ratio as n (unlike n/100)
     """
     mylist = []
     for j in range(len(seq)):
