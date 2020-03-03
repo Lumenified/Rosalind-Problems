@@ -1,4 +1,4 @@
-with open("rosalind_gc.txt", "r") as p:
+with open("myfile.txt", "r") as p:
     """
     modifying the fasta file.
     """

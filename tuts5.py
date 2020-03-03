@@ -3,11 +3,13 @@ from Bio import SeqIO
 mypool = [] #my gene pool
 
 for record in SeqIO.parse("./myfile.txt", "fasta"):
-    mylist.append(record)
+    mypool.append(record)
 
-mycluster = []#clustered genes
+DoIGenes = []# a dict of individual genes
 
-for i in range(len(mylist)):
-    mycluster.append([mylist[i].id ,(list(mylist[i]).count("G")+list(mylist[i]).count("C"))/len(mylist[i])*100])
+for i in range(len(mypool)):
+    DoIGenes.append([mypool[i].id ,(list(mypool[i]).count("G")+list(mypool[i]).count("C"))/len(mypool[i])*100])
 
-print(sorted(mycluster,reverse=True)[0])
+HGCContent = sorted(DoIGenes,reverse=True)[0] # The highest GC content
+print(HGCContent[0])
+print(HGCContent[1])
