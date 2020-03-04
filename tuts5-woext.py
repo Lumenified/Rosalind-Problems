@@ -12,13 +12,12 @@ with open("myfile.txt", "r") as p:
                 my_id = i[1:]#without the symbol
                 my_gen += 1
             else:
-                my_file.append([my_id,my_cache])
+                my_file.append([my_id.replace("\n", ""),my_cache.replace("\n", "")])
                 my_id = i[1:]
                 my_cache = ""
         else:#if the line doesnt start with the symbol it means its our gene's itself or extent
             my_cache += i[:-1]#we add up the nucleotide lines until \n (end of a line)
-        pass
-    my_file.append([my_id, my_cache])
+    my_file.append([my_id.replace("\n", ""), my_cache.replace("\n", "")])
 
 def calc_gc_content(seq):
     """
@@ -30,5 +29,5 @@ def calc_gc_content(seq):
         mylist.append([seq[j][0], my_ratio])
         pass
     my_return = sorted(mylist, key=lambda x: x[1], reverse=True)
-    return str(my_return[0][0]) + str(my_return[0][1])
+    return str(my_return[0][0]) + "\n" + str(my_return[0][1])
 print(calc_gc_content(my_file))
