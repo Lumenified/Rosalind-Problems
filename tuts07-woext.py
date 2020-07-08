@@ -38,7 +38,7 @@ def MendelFone(mylist: dict):
 def dominant_ratio(my_array: dict):
     """
     takes dict
-    returns phenotypic dominant individuals' and its ratio as tuple
+    returns phenotypic dominant individuals' and its ratio as float
     """
     dominantNumber = 0
     for i in my_array:
