@@ -1,4 +1,4 @@
-with open("tuts7.txt") as f:
+with open("tuts7.txt") as f: # takes 3 integers in a file
     my_file = [int(i) for i in str(f.read()).split()]
     d = my_file[0]#Dominants
     h = my_file[1]#Hetero
@@ -29,9 +29,7 @@ def MendelFone(mylist: dict):
     crossed = []
     for i in mylist:
         for j in i[0]:
-            first_allel = j
             for k in i[1]:
-                second_allel = k
                 crossed.append(j+k)
     return crossed
 
